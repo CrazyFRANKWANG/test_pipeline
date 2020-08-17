@@ -1,7 +1,14 @@
 pipeline {
     agent any
-
+	
     stages {
+		
+		stage('pull the demo') {
+			steps{
+				git credentialsId: '56c04c06-92fa-4e96-8bd4-7afaf655f1ce', url: 'git@gitee.com:FRANKWANG2020/test_pipeline.git'
+			}
+		}
+		
         stage('First Stage') {
             steps {
                 echo 'Hello World once!'
